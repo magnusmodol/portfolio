@@ -1,0 +1,478 @@
+/* START generelt */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Frank+Ruhl+Libre');
+
+* {
+    min-width: 0;
+}
+
+html {
+    /*Scroller til innhold smooth */
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fafafa;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    display: grid;
+    grid-gap: 2em 5em;
+    grid-template:
+        ".        nav         ."
+        ".        main        ."
+        "footer   footer      footer"
+        / 20% 1fr 20%;
+}
+
+main {
+    display: grid;
+    grid-area: main;
+    grid-row-gap: 5em;
+}
+
+#project {
+    grid-row-gap: 1em;
+}
+
+footer {
+    display: grid;
+    grid-area: footer;
+    place-items: center center;
+    color: white;
+    background-color: #191919;
+    height: 8em;
+}
+
+footer a {
+    color: white;
+    font-weight: bold;
+}
+
+a {
+    color: #055adb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover:not(nav a) {
+    text-decoration: underline;
+}
+
+.padding {
+    padding: 1em 0;
+    width: max-content;
+}
+
+p {
+    line-height: 2em;
+}
+
+.quote {
+    padding-left: 10%;
+    font-style: italic;
+}
+
+/* Gjør bildene skarpere */
+img {
+    image-rendering: -moz-crisp-edges;
+    /* Firefox */
+    image-rendering: -o-crisp-edges;
+    /* Opera */
+    image-rendering: -webkit-optimize-contrast;
+    /* Webkit */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    /* IE */
+}
+
+.big {
+    font-family: "Frank Ruhl Libre", sans-serif;
+    line-height: 1.5em;
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: normal;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+h3 {
+    margin-top: 3em;
+}
+
+#up {
+    text-align: center;
+}
+
+/* END generelt */
+
+/* START navbar */
+nav {
+    display: grid;
+    grid-area: nav;
+    justify-content: left;
+}
+
+nav ul {
+    display: grid;
+    grid-area: list;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: repeat(3, auto);
+    width: auto;
+    grid-column-gap: 4em;
+}
+
+nav a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+nav li {
+    display: grid;
+    height: 10vh;
+    margin: 0;
+    place-items: center left;
+    width: auto;
+}
+
+
+nav a:after {
+    background-color: black;
+    content: '';
+    display: block;
+    height: 2px;
+    transition: 300ms;
+    width: 0;
+}
+
+nav a:hover:after {
+    width: 100%;
+}
+
+/* END navbar */
+
+/* START intro-tekst */
+#intro {
+    display: grid;
+    grid-gap: 2em 2em;
+    grid-template:
+        "text img"1fr / 2fr 1fr;
+}
+
+#intro img {
+    width: 80%;
+    justify-self: right;
+}
+
+
+.logo {
+    max-width: 60px;
+}
+
+/* END intro-tekst */
+
+/* START hjem */
+#work>div {
+    display: grid;
+    grid-row-gap: 2em;
+}
+
+#work,
+#contact {
+    width: 100%;
+}
+
+#contact {
+    margin-bottom: 3em;
+}
+
+#contact p {
+    margin: 0;
+}
+
+#portrait {
+    border-radius: 50%;
+}
+
+/* END hjem */
+
+
+/* START Prosjektside */
+div article {
+    margin-bottom: 5em;
+}
+
+.general {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.general article {
+    height: max-content;
+    margin: 0;
+}
+
+figure img {
+    width: 100%;
+}
+
+figure {
+    margin: 0;
+    width: 100%;
+}
+
+/* Oppsett av bilder */
+.small-two,
+.small-four,
+.big-two,
+.big-four {
+    display: grid;
+    grid-gap: 2em 2em;
+}
+
+.small-two {
+    grid-template:
+        "img img . ."
+        /1fr 1fr 1fr 1fr;
+}
+
+.small-four {
+    grid-template:
+        "img img img img"
+        /1fr 1fr 1fr 1fr;
+}
+
+.big-two {
+    grid-gap: 0 2em;
+    grid-template:
+        "img img"
+        /1fr 1fr;
+}
+
+.big-four {
+    grid-template:
+        "img img"
+        "img img"
+        /1fr 1fr;
+}
+
+figcaption {
+    font-style: italic;
+    margin: 0.5em 0 2em 0;
+}
+
+/*Justerer figurtekst pga. skygge på bildet */
+.adjust {
+    margin-top: -0.5em;
+}
+
+.half {
+    width: 50%;
+}
+
+.video {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 størrelsesforhold (deler man 9 på 16 får man 0.5625) */
+    overflow: hidden;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* END Prosjektside */
+
+/* START prosjekt-kort */
+.card {
+    display: grid;
+    grid-gap: 2em 3em;
+    grid-template:
+        "text   image"
+        / 1fr 1fr;
+}
+
+/* Farger til ulike prosjekter */
+.easyshop {
+    background-color: #CDE3EF;
+}
+
+.hobby {
+    background-color: #CFEDE0;
+}
+
+.reko {
+    background-color: #D4FFD3;
+}
+
+.content {
+    grid-area: text;
+    align-self: center;
+    margin: 2em;
+}
+
+.card img {
+    grid-area: image;
+    max-width: 100%;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.description,
+.tags,
+.card h3 {
+    color: #191919;
+}
+
+.description {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.tags {
+    font-size: 16px;
+    font-weight: 200;
+}
+
+/* END prosjekt-kort */
+
+
+/* START responsivt design */
+@media screen and (max-width: 1500px) {
+    body {
+        grid-template:
+            ".        nav         ."
+            ".        main        ."
+            "footer   footer      footer"
+            / 10% 1fr 10%;
+    }
+}
+
+
+@media screen and (max-width: 1280px) {
+    body {
+        grid-template:
+            ".        nav         ."
+            ".        main        ."
+            "footer   footer      footer"
+            / 5% 1fr 5%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        grid-column-gap: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #intro {
+        display: grid;
+        grid-row-gap: 4em;
+        grid-template:
+            "text"
+            "img"
+            / 1fr;
+    }
+
+    #intro img {
+        width: 100%;
+    }
+
+
+    body {
+        grid-template:
+            "nav"
+            "main"
+            "footer"
+            / 1fr;
+    }
+
+    nav {
+        margin: 0 4% 0 4%;
+    }
+
+    main {
+        margin: 0 4% 0 4%;
+    }
+
+    .card {
+        display: grid;
+        grid-row-gap: 0;
+        grid-template:
+            "text"
+            "image"
+            /1fr;
+    }
+
+    .content {
+        margin-bottom: 2em;
+    }
+
+    .card h3 {
+        margin-top: 2em;
+    }
+
+    footer>* {
+        margin: 0 2em;
+    }
+
+    .general {
+        grid-template-columns: none;
+    }
+
+    .half {
+        width: 100%;
+    }
+
+    .small-two {
+        grid-template:
+            "img img"
+            /1fr 1fr
+    }
+
+    .small-four {
+        grid-template:
+            "img img"
+            "img img"
+            /1fr 1fr;
+    }
+
+    .big-two {
+        grid-template:
+            "img"
+            "img"
+            /1fr;
+    }
+
+    .big-four {
+        grid-template:
+            "img"
+            "img"
+            "img"
+            "img"
+            /1fr;
+    }
+}
+
+/* END responsivt design */
