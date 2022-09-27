@@ -85,6 +85,11 @@ img {
     /* IE */
 }
 
+video {
+    margin-top: 50px;
+    width: 100%;
+}
+
 .big {
     font-family: "Frank Ruhl Libre", sans-serif;
     line-height: 1.5em;
@@ -266,6 +271,7 @@ figure {
 figcaption {
     font-style: italic;
     margin: 0.5em 0 2em 0;
+    line-height: 1.5em;
 }
 
 /*Justerer figurtekst pga. skygge på bildet */
@@ -318,6 +324,10 @@ iframe {
 
 .reko {
     background-color: #D4FFD3;
+}
+
+.bachelor {
+    background-color: #FFFEDD;
 }
 
 .content {
